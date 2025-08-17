@@ -27,7 +27,7 @@ public class RestaurantServiceImpl implements RestaurantService {
             String name, String cuisine, Integer minCustomerRating, Integer maxDistance, Integer maxPrice) {
 
         Pageable top5 = PageRequest.of(0, searchMaxResults);
-        return restaurantRepository.searchRestaurants(name, cuisine, minCustomerRating, maxDistance, maxPrice, top5);
+        return restaurantRepository.search(name, cuisine, minCustomerRating, maxDistance, maxPrice, top5);
 
     }
 }

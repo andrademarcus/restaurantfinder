@@ -25,7 +25,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
                 AND (:maxPrice IS NULL OR r.price <= :maxPrice)
               ORDER BY r.distance ASC, r.customerRating DESC, r.price ASC, r.name ASC
             """)
-    List<RestaurantSearchResultDto> searchRestaurants(String name,
+    List<RestaurantSearchResultDto> search(String name,
                                                       String cuisine,
                                                       Integer minCustomerRating,
                                                       Integer maxDistance,
